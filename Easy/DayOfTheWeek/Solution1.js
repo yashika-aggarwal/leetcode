@@ -5,7 +5,7 @@
  * @return {string}
  */
 const days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const months = [3,3,6,8,11,13,16,19,21,24,26,29]
+const months = [3,3,6,8,11,13,16,19,21,24,26,29];
 
 var dayOfTheWeek = function(day, month, year) {
     let oddDays =day+((year-1)+Math.floor((year-1)/4)-Math.floor((year-1)/100)+Math.floor((year-1)/400));
