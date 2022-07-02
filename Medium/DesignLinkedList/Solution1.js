@@ -62,15 +62,13 @@ MyLinkedList.prototype.addAtIndex = function(index, val) {
     if(index===0){
         this.head = new Node(val,prev);
     }
-    else{
-        while(prevIndx<index-1 && prev.next){
+    while(prevIndx<index-1 && prev.next){
         prev= prev.next;
         prevIndx++;
-        }
-        if(prevIndx===index-1 && prev){
-            let cur = new Node(val,prev.next);
-            prev.next = cur;
-        }
+    }
+    if(prevIndx===index-1 && prev){
+        let cur = new Node(val,prev.next);
+        prev.next = cur;
     }
 };
 
@@ -82,20 +80,18 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
     if(index===0){
         this.head = this.head.next;
     }
-    else{
-       let prevIndx =0;
-        let prev = this.head;
-        while(prevIndx<index-1 && prev.next){
-            prev = prev.next;
-            prevIndx++;
-        }
-        if(prevIndx===index-1){
-            if(prev.next){
-                 let cur = prev.next;
-                 prev.next = cur.next;
-            }
-        } 
+    let prevIndx =0;
+    let prev = this.head;
+    while(prevIndx<index-1 && prev.next){
+        prev = prev.next;
+        prevIndx++;
     }
+    if(prevIndx===index-1){
+        if(prev.next){
+            let cur = prev.next;
+            prev.next = cur.next;
+        }
+    } 
 };
 
 /** 
