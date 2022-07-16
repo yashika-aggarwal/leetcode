@@ -10,7 +10,6 @@ var intersect = function(nums1, nums2) {
     nums2.sort(function (a,b){
         return a-b;
     });
-    console.log(nums1,nums2);
     let common = [];
     let largerArray = nums1;
     let smallerArray = nums2;
@@ -32,16 +31,6 @@ var intersect = function(nums1, nums2) {
             else{
                 p2++;
             }
-    }
-    for(let i = p2;i<largerArray.length;i++){
-      //  console.log(largerArray)
-        if(smallerArray[p1]<largerArray[i]){
-            break;
-        }
-        else if(smallerArray[p1]===largerArray[i]){
-            common.push(smallerArray[p1]);
-            break;
-        }
     }
     return common;
 };
