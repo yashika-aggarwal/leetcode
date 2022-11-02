@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var thirdMax = function(nums) {
+    let max1 = Math.max(...nums);
+   // console.log(max1);
+    let max2 = -Infinity;
+    for(let i = 0; i < nums.length; i++){
+        if(max1 !== nums[i] && nums[i] > max2){
+            max2 = nums[i];
+        }
+    }
+    if(max2 === -Infinity){
+        return max1;
+    }
+      //  console.log(max1,max2);
+    let max3 = -Infinity;
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] !== max1 && nums[i] !== max2 && nums[i] > max3){
+            max3 = nums[i];
+        }
+    }    
+    return max3 === -Infinity? max1:max3;
+};
